@@ -1,0 +1,97 @@
+body {
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/376318/22624_adventure_time.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-family: 'Maiden Orange', cursive;
+}
+
+button {
+  padding: .8rem;
+  border: 3px solid black;
+  border-radius: 5%;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #D3D3D3;
+}
+
+.contain {
+  min-height: 200px;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  color: #770000;
+  text-shadow: 2px 2px #fff;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.p1 {
+  font-family: Maiden Orange;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0px 0px 2px #fff, -1px -1px #000, 1px 1px #fff;
+}
+
+.quote {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: VT323;
+  background: white;
+  border-radius: 4px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 575px;
+  margin: 5%;
+ 
+} 
+
+.title_logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  text-align: center;
+}
+
+.quote-button {
+  display: flex;
+  justify-content: center;
+}
+
+#ATQuote {
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+@media only screen and (max-width: 755px) {
+    .quote {
+        width: auto;
+        height: auto;
+    }
+}

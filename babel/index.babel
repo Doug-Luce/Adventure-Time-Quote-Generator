@@ -1,0 +1,82 @@
+class Page extends React.Component {
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      quote: "Finn: Mathematical!"
+    };
+    $.ajax({
+      type: 'GET',
+      context: this,
+      url: 'https://adventure-time-quote-api.glitch.me/api/random',
+      success: function(data) {
+        this.setState({quote: data});
+      }
+    });
+  }
+ 
+  handleClick() {
+    $.ajax({
+      type: 'GET',
+      context: this,
+      url: 'https://adventure-time-quote-api.glitch.me/api/random',
+      success: function(data) {
+        this.setState({quote: data});
+      }
+    });
+  }
+
+  render() {
+    return (
+      <div className="wrapper">
+        <TitleLogo />
+        <Intro />
+        <Button onClick={this.handleClick}/>
+        <Quote quote={this.state.quote} />
+      </div>
+    );
+  }
+}
+
+const TitleLogo = () => (
+  <div>
+    <img
+      className="title_logo"
+      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/376318/Adventure_Time_logo.png" alt="Adventure Time Logo"
+    />
+    <div className="title unselectable">
+      <h1>Quote Generator</h1>
+    </div>
+  </div>
+);
+
+const Intro = () => (
+  <div>
+    <div className="p1 unselectable">
+      <p>
+        This a quote generator for one of my favorite shows, Adventure Time. For
+        a children's show you'll find that it can be pretty deep.
+      </p>
+
+      <p>Press that button to get a random quote, ya dig?</p>
+    </div>
+  </div>
+);
+
+const Button = (props) => (
+  <div>
+    <div className="quote-button" onClick={props.onClick}>
+      <button>Generate a Quote</button>
+    </div>
+  </div>
+);
+
+const Quote = props => (
+  <div className="contain">
+    <div className="quote">
+      <div id="ATQuote">{props.quote}</div>
+    </div>
+  </div>
+);
+
+ReactDOM.render(<Page />, document.getElementById("app"));
